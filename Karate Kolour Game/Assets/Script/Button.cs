@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int button_ID;
+    public GameObject player;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+
+
+
     private void OnMouseDown()
     {
-        
-        Debug.Log("Aprete boton");
+       
+
+
     }
 
 }

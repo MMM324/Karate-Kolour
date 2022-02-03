@@ -16,6 +16,20 @@ public class player_char : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+            
+            if (rayHit)
+            {
+                if (rayHit.transform.tag == "posture_shift")
+                {
+                    posture_ID = rayHit.transform.GetComponent<Button>().button_ID;
+                    
+
+                }
+            }
+        }
         posture_check();
     }
 
@@ -23,7 +37,7 @@ public class player_char : MonoBehaviour
     {
         if (posture_ID == 0)
         {
-            cube.color = new Color(2, 1, 0);
+            cube.color = new Color(1, 0.5f, 0);
         }
         else if (posture_ID == 1)
         {
@@ -35,7 +49,7 @@ public class player_char : MonoBehaviour
         }
         else if (posture_ID == 3)
         {
-            cube.color = new Color(0, 0, 1);
+            cube.color = new Color(1, 1, 0);
         }
     }
 
