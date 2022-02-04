@@ -8,7 +8,7 @@ public class Spawn_manager : MonoBehaviour
     public GameObject[] Spawners;
     void Start()
     {
-        
+        StartCoroutine(SpawnEnemies());
     }
 
     IEnumerator SpawnEnemies()
