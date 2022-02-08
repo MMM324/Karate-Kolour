@@ -37,6 +37,7 @@ public class Enemies : MonoBehaviour
                 if (karateka.posture_ID == enemy_ID)
                 {
                     Destroy(this.gameObject);
+                    karateka.score = karateka.score + 1;
                 }
                 else if (karateka.posture_ID != enemy_ID)
                 {

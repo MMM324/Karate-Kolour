@@ -7,6 +7,7 @@ public class player_char : MonoBehaviour
 {
     public int posture_ID;
     public SpriteRenderer cube;
+    public int score;
 
     void Start()
     {
@@ -30,7 +31,11 @@ public class player_char : MonoBehaviour
                 }
             }
         }
+
+        
+
         posture_check();
+        inputsjaja();
     }
 
     public void posture_check()
@@ -56,6 +61,26 @@ public class player_char : MonoBehaviour
     public void ded()
     {
         SceneManager.LoadScene("game_over");
+    }
+
+    public void inputsjaja()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            posture_ID = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            posture_ID = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            posture_ID = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            posture_ID = 3;
+        }
     }
 
 }

@@ -10,4 +10,9 @@ public class Scene_manager : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
+    public void kill_game()
+    {
+        Application.Quit();
+    }
+
 }
