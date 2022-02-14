@@ -20,6 +20,7 @@ public class Enemies : MonoBehaviour
 
     void Update()
     {
+        //SetSpedd();
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         posture_check();
     }
@@ -27,7 +28,6 @@ public class Enemies : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Deflected by" + other.name);
-
         if (other.tag == "player")
         {
             player_char karateka = other.GetComponent<player_char>();
@@ -49,21 +49,36 @@ public class Enemies : MonoBehaviour
 
     public void posture_check()
     {
-        if (enemy_ID == 0)
+        switch (enemy_ID)
         {
-            cube.color = new Color(1, 0.5f, 0);
-        }
-        else if (enemy_ID == 1)
-        {
-            cube.color = new Color(0, 1, 0);
-        }
-        else if (enemy_ID == 2)
-        {
-            cube.color = new Color(1, 0, 1);
-        }
-        else if (enemy_ID == 3)
-        {
-            cube.color = new Color(1, 1, 0);
+            case 0:
+                cube.color = new Color(1, 0.5f, 0);
+                break;
+            case 1:
+                cube.color = new Color(0, 1, 0);
+                break;
+            case 2:
+                cube.color = new Color(1, 0, 1);
+                break;
+            case 3:
+                cube.color = new Color(1, 1, 0);
+                break;
+            default:
+                break;
         }
     }
+  /*public void SetSpedd() 
+    {
+    //No estaria reconociendo al karateka por lo que no se ejecuta la funcion
+        if (karateka != null)
+        {
+            player_char karateka = gameObject.GetComponent<player_char>();
+            if (karateka.score >= 5 && karateka.score <= 10)
+            {
+                speed = Random.Range(7f, 10f);
+            }
+            else if (karateka.score > 10) { speed = Random.Range(7f, 10f); }
+        }
+        else { Debug.Log("No funca");  }
+    }*/
 }
